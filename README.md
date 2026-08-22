@@ -1,2 +1,13 @@
-# Exerc-cio-Sistema-de-Pagamentos-Csharp
-Exercício Sistema de Pagamentos em CSharp - Bootcamp Desenvolvimento Back-End WoMakers Code.
+# Exercícios Sistema de Pagamento em Csharp
+
+Repositório destinado aos exercícios e estudos realizados durante o bootcamp da **WoMakersCode** ✨
+
+## Tecnologias utilizadas
+
+- C#
+- .NET
+- Visual Studio Code
+
+---
+
+Desenvolvido durante o bootcamp da **WoMakersCode** 💜
