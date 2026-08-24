@@ -1,4 +1,4 @@
-# Exercícios Sistema de Pagamento em Csharp
+# Exercício Sistema de Pagamento em Csharp
 
 Repositório destinado aos exercícios e estudos realizados durante o bootcamp da **WoMakersCode** ✨
 
