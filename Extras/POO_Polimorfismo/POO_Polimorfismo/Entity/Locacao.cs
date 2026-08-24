@@ -18,9 +18,9 @@
             Id = id;
             Cliente = cliente;
             Veiculo = veiculo;
-            DataDevolucao = dataRetirada;
+            DataRetirada = dataRetirada;
             QuantidadeDias = quantidadeDias;
-            DataDevolucao = DataDevolucao.AddDays(quantidadeDias);
+            DataDevolucao = dataRetirada.AddDays(quantidadeDias);
             Situacao = SituacaoLocacao.EmAndamento;
             ValorTotal = Veiculo.CalcularValorLocacao(quantidadeDias);
 
@@ -55,9 +55,9 @@
             }
         }
 
-        public void Devolver() 
+        public void Devolver()
         {
-            if (Situacao == SituacaoLocacao.Finalizada) 
+            if (Situacao == SituacaoLocacao.Finalizada)
             {
                 Console.WriteLine("\nEssa locação já foi finalizada.");
                 return;
@@ -67,7 +67,7 @@
             Veiculo.TornarDisponivel();
         }
 
-        public void ExibirInformacoes() 
+        public void ExibirInformacoes()
         {
             Console.WriteLine("");
             Console.WriteLine($"ID: {Id}");
@@ -77,7 +77,7 @@
             Console.WriteLine($"Data de Retirada: {DataRetirada:dd/MM/yyyy}");
             Console.WriteLine($"Devolução Esperada: {DataDevolucao:dd/MM/yyyy}");
             Console.WriteLine($"Quantidade de Dias: {QuantidadeDias}");
-            Console.WriteLine($"Valor Total: {ValorTotal}");
+            Console.WriteLine($"Valor Total: {ValorTotal:C}");
             Console.WriteLine($"Situação: {(Situacao == SituacaoLocacao.EmAndamento ? "Em andamento" : "Finalizada")}");
         }
     }

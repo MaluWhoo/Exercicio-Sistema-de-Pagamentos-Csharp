@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace POO_Polimorfismo.Entity
+﻿namespace POO_Polimorfismo.Entity
 {
     internal class Veiculo
     {
@@ -18,10 +16,10 @@ namespace POO_Polimorfismo.Entity
             EstaDisponivel = true;
         }
 
-        public bool AlterarValorDiaria(decimal valorDiaria) 
+        public bool AlterarValorDiaria(decimal valorDiaria)
         {
-            if (ValorDiaria < 0) 
-            { 
+            if (ValorDiaria < 0)
+            {
                 return false;
             }
 
@@ -29,19 +27,19 @@ namespace POO_Polimorfismo.Entity
             return true;
         }
 
-        public void TornarIndisponivel() 
+        public void TornarIndisponivel()
         {
             EstaDisponivel = false;
         }
 
-        public void TornarDisponivel() 
+        public void TornarDisponivel()
         {
             EstaDisponivel = true;
         }
 
-        public virtual decimal CalcularValorLocacao(int quantidadeDias) 
+        public virtual decimal CalcularValorLocacao(int quantidadeDias)
         {
-            if (quantidadeDias <= 0) 
+            if (quantidadeDias <= 0)
             {
                 throw new ArgumentException("A quantidade de dias deve ser maior que zero.");
             }
@@ -49,7 +47,7 @@ namespace POO_Polimorfismo.Entity
             return ValorDiaria * quantidadeDias;
         }
 
-        public virtual void ExibirInformacoes() 
+        public virtual void ExibirInformacoes()
         {
             Console.WriteLine("");
             Console.WriteLine($"Categoria: {GetType().Name}");
