@@ -64,6 +64,7 @@
             FormaPagamento = formaPagamento;
             ValorFinal = formaPagamento.CalcularValorFinal(Valor);
 
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nPagamento realizado com sucesso!");
             Pago = true;
         }

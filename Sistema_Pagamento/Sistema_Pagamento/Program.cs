@@ -7,15 +7,8 @@ string opcao;
 
 do
 {
-    Console.WriteLine("\n==== SISTEMA DE VENDAS ====\n");
-
-    Console.WriteLine("1 - Cadastrar Venda");
-    Console.WriteLine("2 - Listar Vendas");
-    Console.WriteLine("3 - Realizar Pagamento");
-    Console.WriteLine("0 - Sair");
-
-    Console.Write("\nNavegação --> ");
-    opcao = Console.ReadLine();
+    Console.Clear();
+    Menu();
 
     switch (opcao)
     {
@@ -32,10 +25,34 @@ do
             Console.WriteLine("\nFinalizando ...");
             break;
         default:
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\nDigite um valor válido ou zero para sair.");
             break;
     }
 
+    if (opcao != "0")
+    {
+        Console.WriteLine("\nPressione ENTER para continuar...");
+        Console.ReadLine(); // <--- O "freio" do sistema
+    }
+
 } while (opcao != "0");
+
+void Menu()
+{
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("==== SISTEMA DE VENDAS ====");
+
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine();
+    Console.WriteLine("1 - Cadastrar Venda");
+    Console.WriteLine("2 - Listar Vendas");
+    Console.WriteLine("3 - Realizar Pagamento");
+    Console.WriteLine("0 - Sair");
+
+    Console.Write("\nNavegação --> ");
+    opcao = Console.ReadLine();
+}
 
 static void CadastrarVenda(List<Cliente> clientes, List<Venda> vendas)
 {
@@ -84,7 +101,7 @@ static void CadastrarVenda(List<Cliente> clientes, List<Venda> vendas)
 
 static void ListarVendas(List<Venda> vendas)
 {
-    Console.WriteLine("\n---- Consultar Vendas ----");
+    Console.WriteLine("\n---- Consultar Vendas ----\n");
 
     if (vendas.Count == 0) { Console.WriteLine("\nNenhuma venda cadastrada."); return; }
 
@@ -147,6 +164,7 @@ static void RealizarPagamento(List<Venda> vendas)
         case "0":
             return;
         default:
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\nValor inválido.");
             return;
     }
