@@ -32,8 +32,13 @@
         public void ProcessarCadastroVenda()
         {
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Venda Cadastrada com sucesso!");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Situação: {Situacao}");
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public void ConsultarVendas()
@@ -42,8 +47,11 @@
             Console.WriteLine($"Venda: {Numero}");
             Console.WriteLine($"Cliente: {Cliente.Nome}");
             Console.WriteLine($"Valor Original: {Valor:C}");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"Situação: {Situacao}");
 
+            Console.ForegroundColor = ConsoleColor.White;
             //Se a conta já tiver sido paga...
             if (Pago == true)
             {

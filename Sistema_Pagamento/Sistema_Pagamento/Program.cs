@@ -33,7 +33,7 @@ do
     if (opcao != "0")
     {
         Console.WriteLine("\nPressione ENTER para continuar...");
-        Console.ReadLine(); // <--- O "freio" do sistema
+        Console.ReadLine();
     }
 
 } while (opcao != "0");
